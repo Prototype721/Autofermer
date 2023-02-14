@@ -3,13 +3,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>	
-		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript" src="/js/smoothie.js"></script>
         <script type="text/javascript" src="/js/gauge.min.js"></script>		
 		<script type="text/javascript" src="/js/jsmeter-1.1.2.src.js"></script>
 		<script type="text/javascript" src="/js/jsdisplay-1.1.1.src.js"></script>		
 		<script type="text/javascript" src="/js/jsmeter.js"></script>
 		<script type="text/javascript" src="/js/liteChart.min.js"></script>
-		<script type="text/javascript" src="/js/my_chart.js"></script>
+		<!-- <script type="text/javascript" src="/js/my_chart.js"></script> -->
 		<script type="text/javascript" src="/js/common.js"></script>		
         <link rel="stylesheet" type="text/css" href="/css/style.css">
 		<link rel="stylesheet" type="text/css" href="/css/jsmeter.css">
@@ -62,14 +62,17 @@
 				</tr>
 				<tr>
 					<td align="center" style="position: relative;">
-						<div id="temp_table" style="background: yellow; height: 100px; width: 450px; position: absolute">
+						<canvas id="temp_chart" width="450" height="100" style=" position: absolute"></canvas>
+						<div id="temp_table" style="background: yellow; height: 100px; width: 450px;">
 							<br/><br/>						
 							<table class="table_dark">
 								<tr><td>Время</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
 								<tr><td>Температура</td><td>45.3</td><td>55</td><td>60</td><td>55.6</td><td>70</td><td>75</td><td>48</td><td>55</td><td>80</td><td>78</td></tr>
 							</table>
-						</div>	
-						<div id="temp_chart" style="height: 100px; width: 450px; visibility: hidden"></div>	
+						</div>
+
+		
+						<!-- <div id="temp_chart" style="height: 100px; width: 450px; visibility: hidden"></div>	 -->
 					</td>
 					<td align="center" style="position: relative;">
 						<div id="temp_table" style="background: yellow; height: 100px; width: 450px; position: absolute">
@@ -175,7 +178,7 @@
 
 				<tr >
 					<td colspan="2" valign="middle" align="center">
-						<p>Статус</p>
+						<p>Статус <span id="informer"></span></p>
 					</td>
 				</tr>
 			</table>

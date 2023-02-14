@@ -1,5 +1,6 @@
 // https://codyshop.ru/litechart-library-for-chart-creation/
 document.addEventListener("DOMContentLoaded", function(){
+/*
 	// Create liteChart.js Object
 	settings = {
 		padding: {
@@ -29,4 +30,22 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	// Draw
 	d.draw();
+	
+var smoothie = new SmoothieChart();
+smoothie.streamTo(document.getElementById("temp_chart"), 450);
+// Data
+var line1 = new TimeSeries();
+var line2 = new TimeSeries();
+
+// Add a random value to each line every second
+setInterval(function() {
+  line1.append(Date.now(), Math.random());
+  line2.append(Date.now(), Math.random());
+}, 1000);
+
+// Add to SmoothieChart
+smoothie.addTimeSeries(line1);
+smoothie.addTimeSeries(line2);	
+	
 });
+*/

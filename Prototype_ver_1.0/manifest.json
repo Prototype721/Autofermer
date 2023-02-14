@@ -18,6 +18,7 @@
   },
   "permissions": [
       "fullscreen",
-	  "webview"
+	  "webview",
+	  "https://dt.miet.ru/ppo_it/api/*"
   ]
 }
