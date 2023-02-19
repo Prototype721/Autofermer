@@ -1,6 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Автоматизированная система удаленного управления теплицей",
+  "short_name": "Управление теплицей",
   "description": "Проект команды ГБОУ Школа №2072 на предпрофессиональной олимпиаде, направление ИТ",
   "version": "1.1",
   "author": "Команда №1",
@@ -11,13 +12,18 @@
     }
   },
   "icons": { 
-      "32": "img/icon32.png", 
-      "48": "img/icon48.png", 
-      "64": "img/icon64.png", 
-      "128": "img/icon128.png" 
+      "16": "favicon-16x16.png",   
+      "32": "favicon-32x32.png", 
+      "48": "android-chrome-48x48.png", 
+      "72": "android-chrome-72x72.png",
+	  "144": "android-chrome-144x144.png",
+      "192": "android-chrome-192x192.png",
+	  "256": "android-chrome-256x256.png",
+	  "384": "android-chrome-384x384.png"
   },
   "permissions": [
-      "fullscreen",
+      "storage",
+	  "fullscreen",
 	  "webview",
 	  "https://dt.miet.ru/ppo_it/api/*"
   ]

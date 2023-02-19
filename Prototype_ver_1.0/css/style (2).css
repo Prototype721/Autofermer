@@ -60,17 +60,19 @@ canvas {
 /*     opacity: 0.5; */
 }
 
-#menu .btn-fullscreen           { background-image: url('/img/desktop_000000_32.png'); }
-#menu .btn-connection           { background-image: url('/img/svetofor_red.png'); }
-#menu .btn-connection.connected { background-image: url('/img/svetofor_green.png'); }
+#menu .btn-fullscreen           { background-image: url('chrome-extension://__MSG_@@extension_id__/img/desktop_000000_32.png'); }
+#menu .btn-connection           { background-image: url('chrome-extension://__MSG_@@extension_id__/img/svetofor_red.png'); }
+#menu .btn-connection.connected { background-image: url('chrome-extension://__MSG_@@extension_id__/img/svetofor_green.png'); }
+/*#menu .btn-connection.connected { background-image: url('chrome-extension://__MSG_@@extension_id__/img/link_000000_32.png'); }*/
 
-#menu .btn-settings             { background-image: url('/img/cog_000000_32.png'); }
+#menu .btn-settings             { background-image: url('chrome-extension://__MSG_@@extension_id__/img/cog_000000_32.png'); }
+#menu .btn-about                { background-image: url('chrome-extension://__MSG_@@extension_id__/img/amperka_000000_32.png'); }
 
-#menu.light .btn-fullscreen           { background-image: url('/img/desktop_ffffff_32.png'); }
-#menu.light .btn-connection           { background-image: url('/img/svetofor_red.png'); }
-#menu.light .btn-connection.connected { background-image: url('/img/svetofor_green.png'); }
-#menu.light .btn-settings             { background-image: url('/img/cog_ffffff_32.png'); }
-#menu.light .btn-about                { background-image: url('/img/amperka_ffffff_32.png'); }
+#menu.light .btn-fullscreen           { background-image: url('chrome-extension://__MSG_@@extension_id__/img/desktop_ffffff_32.png'); }
+#menu.light .btn-connection           { background-image: url('chrome-extension://__MSG_@@extension_id__/img/svetofor_red.png'); }
+#menu.light .btn-connection.connected { background-image: url('chrome-extension://__MSG_@@extension_id__/img/svetofor_green.png'); }
+#menu.light .btn-settings             { background-image: url('chrome-extension://__MSG_@@extension_id__/img/cog_ffffff_32.png'); }
+#menu.light .btn-about                { background-image: url('chrome-extension://__MSG_@@extension_id__/img/amperka_ffffff_32.png'); }
 
 .popup {
     display: none;

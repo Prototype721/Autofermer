@@ -3,32 +3,35 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>	
-		<script type="text/javascript" src="/js/smoothie.js"></script>
         <script type="text/javascript" src="/js/gauge.min.js"></script>		
-		<script type="text/javascript" src="/js/jsmeter-1.1.2.src.js"></script>
-		<script type="text/javascript" src="/js/jsdisplay-1.1.1.src.js"></script>		
-		<script type="text/javascript" src="/js/jsmeter.js"></script>
-		<script type="text/javascript" src="/js/liteChart.min.js"></script>
+		<script type="text/javascript" src="/js/litechart.min.js"></script>
 		<!-- <script type="text/javascript" src="/js/my_chart.js"></script> -->
 		<script type="text/javascript" src="/js/common.js"></script>		
         <link rel="stylesheet" type="text/css" href="/css/style.css">
 		<link rel="stylesheet" type="text/css" href="/css/jsmeter.css">
-        <link rel="stylesheet" type="text/css" href="/css/table.css">	
+        <link rel="stylesheet" type="text/css" href="/css/table.css">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">	
     </head>
     <body>
-		<img src="/img/logo2072.jpg" style="float: left;" />
+		<img src="/img/logo2072.jpg" style="float: left;" title='ГБОУ города Москвы "Школа №2072' alt='ГБОУ города Москвы "Школа №2072' />
     	<h1><span>Система удаленного управления теплицей</span></h1>	
         <div id="wrap">
 			<table align="center" border=0>
 				<tr>	
-					<td valign="middle" align="center" style="border-right: yellow solid 2px;">
+					<td valign="middle" align="center" style="border-right: yellow solid 2px; width: 530px; ">
 <!--  Температура  -->	
 						<span class="acsel" align="center" >Температура: средняя и текущая<br/>(Датчик №&nbsp;<select id="select_temp"><option>1</option><option>2</option><option>3</option><option>4</option></select>)</span>
 						<table style="text-align: center;" border=0>
 							<tr>
 								<td><span class="acsel" align="center" >Таблица&nbsp;</span></td>
 								<td>
-									<section title=".slide">
+									<section title=".slide1">
 										<div class="slide1">  
 										  <input type="checkbox" value="None" id="slide1" name="check1" />
 										  <label for="slide1"></label>
@@ -40,7 +43,7 @@
 						</table>
 
 					</td>
-					<td valign="middle" align="center">
+					<td valign="middle" align="center" style="width: 530px; ">
 <!-- Влажность  -->
 						<span class="acsel" align="center" >Влажность: средняя и текущая<br/>(Датчик №&nbsp;<select id="select_temp"><option>1</option><option>2</option><option>3</option><option>4</option></select>)</span>
 
@@ -61,28 +64,27 @@
 					</td>
 				</tr>
 				<tr>
-					<td align="center" style="position: relative;">
-						<canvas id="temp_chart" width="450" height="100" style=" position: absolute"></canvas>
-						<div id="temp_table" style="background: yellow; height: 100px; width: 450px;">
-							<br/><br/>						
+					<td align="center" style="position: relative; border-right: yellow solid 2px;">
+						<!-- <canvas id="temp_chart" width="450" height="100" style=" position: absolute"></canvas> -->
+						<div id="temp_table" style=" height: 100px; width: 530px; position: absolute"">
 							<table class="table_dark">
-								<tr><td>Время</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-								<tr><td>Температура</td><td>45.3</td><td>55</td><td>60</td><td>55.6</td><td>70</td><td>75</td><td>48</td><td>55</td><td>80</td><td>78</td></tr>
+								<tr><td><span title="Время">t</span></td><td>&nbsp;1&nbsp;</td><td>&nbsp;2&nbsp;</td><td>&nbsp;3&nbsp;</td><td>&nbsp;4&nbsp;</td><td>&nbsp;5&nbsp;</td><td>&nbsp;6&nbsp;</td><td>&nbsp;7&nbsp;</td><td>&nbsp;8&nbsp;</td><td>&nbsp;9&nbsp;</td><td>&nbsp;10&nbsp;</td></tr>
+								<tr>
+									<td>T</td> <td>32.2</td><td>28.19</td><td>30.25</td><td>28.21</td><td>26.62</td><td>26.18</td><td>28.49</td><td>31.99</td><td>29.96</td><td>31.09</td>
+								</tr>
 							</table>
 						</div>
 
-		
-						<!-- <div id="temp_chart" style="height: 100px; width: 450px; visibility: hidden"></div>	 -->
+						<div id="temp_chart" style="height: 100px; width: 530px; visibility: hidden"></div>	
 					</td>
 					<td align="center" style="position: relative;">
-						<div id="temp_table" style="background: yellow; height: 100px; width: 450px; position: absolute">
-							<br/><br/>						
+						<div id="temp_table" style="height: 100px; width: 530px; position: absolute">
 							<table class="table_dark">
-								<tr><td>Время</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-								<tr><td>Влажность</td><td>45.3</td><td>55</td><td>60</td><td>55.6</td><td>70</td><td>75</td><td>48</td><td>55</td><td>80</td><td>78</td></tr>
+								<tr><td><span title="Время">t</span></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+								<tr><td>Н</td><td>52.2</td><td>78.2</td><td>80.91</td><td>80.62</td><td>70</td><td>68.35</td><td>52.91</td><td>61.89</td><td>67.42</td><td>72</td></tr>
 							</table>
 						</div>	
-						<div id="hum_chart" style="height: 100px; width: 450px; visibility: hidden"></div>	
+						<div id="hum_chart" style="height: 100px; width: 530px; visibility: hidden"></div>	
 					</td>
 				</tr>
 				<tr>
@@ -112,7 +114,7 @@
 						<span class="acsel" align="center" >Общее увлажнение</span>
 						<table style="text-align: center;" border=0>
 							<tr>
-								<td><span class="acsel" align="center" >Включено&nbsp;</span></td>
+								<td><span class="acsel" align="center">Включено&nbsp;</span></td>
 								<td>
 									<section title=".slide4">
 										<div class="slide4">  
@@ -133,11 +135,21 @@
 					<td colspan="2" valign="middle" align="center">				
 						<table style="text-align: center;" border=0>
 							<tr>
-								<td rowspan=2 style="width: 20%;">
-									<span class="acsel" align="center" >Борозда № &nbsp;<select id="select_temp"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>&nbsp;&nbsp;&nbsp;</span>
+								<td rowspan=2 style="width: 20%; border-right: yellow solid 2px;">
+									<span class="acsel" align="center" >Борозда № &nbsp;<select id="select_furrow"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>&nbsp;&nbsp;&nbsp;</span>
 								</td>
-								<td align="center" style="border-left: yellow solid 2px; border-right: yellow solid 2px; width: 50%;">
-									<span class="acsel" align="center" >Влажность борозды</span>
+								<td rowspan=2 style="width: 30%; border-right: yellow solid 2px;">
+									<span class="acsel" align="center" >Полив борозды №<span id="n_fullow_w">1</span></span>
+									<table style="text-align: center;" border=0>
+										<tr>
+											<td><span class="acsel" align="center" >Выключен&nbsp;</span></td>
+											<td><section title=".slide6"><div class="slide6"><input type="checkbox" value="None" id="slide6" name="check2" /><label for="slide6"></label></div></section></td>
+											<td><span class="acsel" align="center" >&nbsp;Включен</span></td>
+										</tr>
+									</table>
+								</td>								
+								<td align="center">
+									<span class="acsel" align="center" >Влажность борозды №<span id="n_fullow_h">1</span></span>
 									<table style="text-align: center;" border=0>
 										<tr>
 											<td><span class="acsel" align="center" >Таблица&nbsp;</span></td>
@@ -146,24 +158,13 @@
 										</tr>
 									</table>
 								</td>
-								<td rowspan=2 style="width: 30%;">
-									<span class="acsel" align="center" >Полив борозды</span>
-									<table style="text-align: center;" border=0>
-										<tr>
-											<td><span class="acsel" align="center" >Включен&nbsp;</span></td>
-											<td><section title=".slide5"><div class="slide5"><input type="checkbox" value="None" id="slide5" name="check2" /><label for="slide5"></label></div></section></td>
-											<td><span class="acsel" align="center" >&nbsp;Выключен</span></td>
-										</tr>
-									</table>
-								</td>
 							</tr>
 							<tr>
-								<td align="center" style="position: relative; border-left: yellow solid 2px; border-right: yellow solid 2px;">
-									<div id="temp_table" style="background: yellow; height: 100px; width: 120px; position: absolute">
-										<br/><br/>						
+								<td align="center" style="position: relative;">
+									<div id="temp_table" style="height: 100px; width: 120px; position: absolute">
 										<table class="table_dark">
-											<tr><td>Время</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-											<tr><td>Влажность</td><td>45.3</td><td>55</td><td>60</td><td>55.6</td><td>70</td><td>75</td><td>48</td><td>55</td><td>80</td><td>78</td></tr>
+											<tr><td><span title="Время">t</span></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+											<tr><td>Н</td><td>64.76</td><td>77.29</td><td>69.82</td><td>62.64</td><td>70</td><td>68.35</td><td>2.91</td><td>71.38</td><td>65.91</td><td>64.57</td></tr>
 										</table>
 									</div>	
 									<div id="temp_chart" style="height: 100px; width: 120px; visibility: hidden"></div>	
@@ -175,7 +176,24 @@
 				<tr>
 					<td colspan="2" align="center"><hr style="border-bottom: yellow solid 2px;" /></td>
 				</tr>				
-
+				<tr>
+					<td colspan="2" align="center"><span class="acsel" align="center" >Настройки системы</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><span class="acsel" align="center" >
+						<table style="text-align: center; width: 100%" border=0>
+							<tr>
+								<td align="center"><span class="acsel" align="center" ><span title="Порог по средней температуре воздуха">Т</span> = &nbsp;<input type="text" id="T_option" style="text-align: center;" size=4  title="Порог по средней температуре воздуха"/></span></td>
+								<td align="center"><span class="acsel" align="center" ><span title="Порог по средней влажности в теплице">H</span> = &nbsp;<input type="text" id="H_option" style="text-align: center;" size=4  title="Порог по средней влажности в теплице"/></span></td>
+								<td align="center"><span class="acsel" align="center" ><span title="Порог по средней влажности в борозде">Hb</span> = &nbsp;<input type="text" id="Hb_option" style="text-align: center;" size=4 title="Порог по средней влажности в борозде" /></span></td>
+								<td align="center"><span class="acsel" align="center" ><input type="checkbox" id="Save_option" style="text-align: center;"/><label for="Save_option">Сохранять в базу</label></span></td>
+							</tr>
+						</table>					
+					</td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><hr style="border-bottom: yellow solid 2px;" /></td>
+				</tr>				
 				<tr >
 					<td colspan="2" valign="middle" align="center">
 						<p>Статус <span id="informer"></span></p>
@@ -184,9 +202,9 @@
 			</table>
         </div>
 		<aside id="menu">
-			<div class="btn btn-connection" title="Экстренный режим"></div>
+			<div id="emergency" class="btn btn-connection" title="Экстренный режим"></div>
 		</aside>
         <aside id="error" class="popup"></aside>
-
+		<script src="companion.js" data-service-worker="sw.js"></script>
     </body>
 </html>
