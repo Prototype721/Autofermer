@@ -4,12 +4,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>	
         <script type="text/javascript" src="/js/gauge.min.js"></script>		
-		<script type="text/javascript" src="/js/litechart.min.js"></script>
+		<script type="text/javascript" src="/js/chartist.min.js"></script>
 		<!-- <script type="text/javascript" src="/js/my_chart.js"></script> -->
 		<script type="text/javascript" src="/js/common.js"></script>		
         <link rel="stylesheet" type="text/css" href="/css/style.css">
 		<link rel="stylesheet" type="text/css" href="/css/jsmeter.css">
         <link rel="stylesheet" type="text/css" href="/css/table.css">
+        <link rel="stylesheet" type="text/css" href="/css/chartist.min.css">		
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -20,13 +21,13 @@
     </head>
     <body>
 		<img src="/img/logo2072.jpg" style="float: left;" title='ГБОУ города Москвы "Школа №2072' alt='ГБОУ города Москвы "Школа №2072' />
-    	<h1><span>Система удаленного управления теплицей</span></h1>	
+    	<h1><span>Система удаленного управления теплицей #it2072</span></h1>	
         <div id="wrap">
 			<table align="center" border=0>
 				<tr>	
 					<td valign="middle" align="center" style="border-right: yellow solid 2px; width: 530px; ">
 <!--  Температура  -->	
-						<span class="acsel" align="center" >Температура: средняя и текущая<br/>(Датчик №&nbsp;<select id="select_temp"><option>1</option><option>2</option><option>3</option><option>4</option></select>)</span>
+						<span class="acsel" align="center" >Температура: средняя и текущая<br/>(Датчик №&nbsp;<select id="select_temp"><option selected >1</option><option>2</option><option>3</option><option>4</option></select>)</span>
 						<table style="text-align: center;" border=0>
 							<tr>
 								<td><span class="acsel" align="center" >Таблица&nbsp;</span></td>
@@ -45,7 +46,7 @@
 					</td>
 					<td valign="middle" align="center" style="width: 530px; ">
 <!-- Влажность  -->
-						<span class="acsel" align="center" >Влажность: средняя и текущая<br/>(Датчик №&nbsp;<select id="select_temp"><option>1</option><option>2</option><option>3</option><option>4</option></select>)</span>
+						<span class="acsel" align="center" >Влажность: средняя и текущая<br/>(Датчик №&nbsp;<select id="select_hum"><option selected >1</option><option>2</option><option>3</option><option>4</option></select>)</span>
 
 						<table style="text-align: center;" border=0>
 							<tr>
@@ -65,25 +66,11 @@
 				</tr>
 				<tr>
 					<td align="center" style="position: relative; border-right: yellow solid 2px;">
-						<!-- <canvas id="temp_chart" width="450" height="100" style=" position: absolute"></canvas> -->
-						<div id="temp_table" style=" height: 100px; width: 530px; position: absolute"">
-							<table class="table_dark">
-								<tr><td><span title="Время">t</span></td><td>&nbsp;1&nbsp;</td><td>&nbsp;2&nbsp;</td><td>&nbsp;3&nbsp;</td><td>&nbsp;4&nbsp;</td><td>&nbsp;5&nbsp;</td><td>&nbsp;6&nbsp;</td><td>&nbsp;7&nbsp;</td><td>&nbsp;8&nbsp;</td><td>&nbsp;9&nbsp;</td><td>&nbsp;10&nbsp;</td></tr>
-								<tr>
-									<td>T</td> <td>32.2</td><td>28.19</td><td>30.25</td><td>28.21</td><td>26.62</td><td>26.18</td><td>28.49</td><td>31.99</td><td>29.96</td><td>31.09</td>
-								</tr>
-							</table>
-						</div>
-
+						<div id="temp_table" style="height: 100px; width: 530px; position: absolute"></div>
 						<div id="temp_chart" style="height: 100px; width: 530px; visibility: hidden"></div>	
 					</td>
 					<td align="center" style="position: relative;">
-						<div id="temp_table" style="height: 100px; width: 530px; position: absolute">
-							<table class="table_dark">
-								<tr><td><span title="Время">t</span></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-								<tr><td>Н</td><td>52.2</td><td>78.2</td><td>80.91</td><td>80.62</td><td>70</td><td>68.35</td><td>52.91</td><td>61.89</td><td>67.42</td><td>72</td></tr>
-							</table>
-						</div>	
+						<div id="hum_table" style="height: 100px; width: 530px; position: absolute"></div>	
 						<div id="hum_chart" style="height: 100px; width: 530px; visibility: hidden"></div>	
 					</td>
 				</tr>
@@ -98,10 +85,10 @@
 							<tr>
 								<td><span class="acsel" align="center" >Открыты&nbsp;</span></td>
 								<td>
-									<section title=".slide3">
-										<div class="slide3">  
-										  <input type="checkbox" value="None" id="slide3" name="check2" />
-										  <label for="slide3"></label>
+									<section title=".slide5">
+										<div class="slide5">  
+										  <input type="checkbox" value="None" id="slide5" name="check2" />
+										  <label for="slide5"></label>
 										</div>
 									</section>
 								</td>
@@ -136,7 +123,7 @@
 						<table style="text-align: center;" border=0>
 							<tr>
 								<td rowspan=2 style="width: 20%; border-right: yellow solid 2px;">
-									<span class="acsel" align="center" >Борозда № &nbsp;<select id="select_furrow"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>&nbsp;&nbsp;&nbsp;</span>
+									<span class="acsel" align="center" >Борозда № &nbsp;<select id="select_furrow"><option selected >1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>&nbsp;&nbsp;&nbsp;</span>
 								</td>
 								<td rowspan=2 style="width: 30%; border-right: yellow solid 2px;">
 									<span class="acsel" align="center" >Полив борозды №<span id="n_fullow_w">1</span></span>
@@ -153,7 +140,7 @@
 									<table style="text-align: center;" border=0>
 										<tr>
 											<td><span class="acsel" align="center" >Таблица&nbsp;</span></td>
-											<td><section title=".slide5"><div class="slide5"><input type="checkbox" value="None" id="slide5" name="check2" /><label for="slide5"></label></div></section></td>
+											<td><section title=".slide3"><div class="slide3"><input type="checkbox" value="None" id="slide3" name="check2" /><label for="slide3"></label></div></section></td>
 											<td><span class="acsel" align="center" >&nbsp;График</span></td>
 										</tr>
 									</table>
@@ -161,13 +148,8 @@
 							</tr>
 							<tr>
 								<td align="center" style="position: relative;">
-									<div id="temp_table" style="height: 100px; width: 120px; position: absolute">
-										<table class="table_dark">
-											<tr><td><span title="Время">t</span></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-											<tr><td>Н</td><td>64.76</td><td>77.29</td><td>69.82</td><td>62.64</td><td>70</td><td>68.35</td><td>2.91</td><td>71.38</td><td>65.91</td><td>64.57</td></tr>
-										</table>
-									</div>	
-									<div id="temp_chart" style="height: 100px; width: 120px; visibility: hidden"></div>	
+									<div id="hum_furrow_table" style="height: 100px; width: 530px; position: absolute">	</div>	
+									<div id="hum_furrow_chart" style="height: 100px; width: 530px; visibility: hidden"></div>	
 								</td>
 							</tr>
 						</table>
@@ -194,11 +176,6 @@
 				<tr>
 					<td colspan="2" align="center"><hr style="border-bottom: yellow solid 2px;" /></td>
 				</tr>				
-				<tr >
-					<td colspan="2" valign="middle" align="center">
-						<p>Статус <span id="informer"></span></p>
-					</td>
-				</tr>
 			</table>
         </div>
 		<aside id="menu">
